@@ -3,13 +3,13 @@ ci:
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.3
+    rev: v4.1.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
 
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.18.0
+    rev: v2.20.4
     hooks:
       - id: commitizen
         stages: [commit-msg]
@@ -21,7 +21,7 @@ repos:
         name: isort (python)
 
   - repo: https://github.com/psf/black
-    rev: 21.7b0
+    rev: 21.12b0
     hooks:
       - id: black
 
