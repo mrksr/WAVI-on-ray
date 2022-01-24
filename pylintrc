@@ -1,0 +1,33 @@
+[MASTER]
+ignore-patterns=_prototyping
+
+
+[MESSAGES CONTROL]
+disable=fixme,
+        # NOTE(mrksr): When implementing interfaces or overriding methods,
+        # arguments often go unused.
+        unused-argument,
+        # NOTE(mrksr): Ray's RLlib frequently uses mixins and an
+        # operator-class-pattern which implement a stateful functional. Both
+        # types of classes generally do not expose public methods.
+        too-few-public-methods,
+        # NOTE(mrksr): Ray often relies on accessing protected members in
+        # functions passed to builder objects
+        protected-access,
+        # NOTE(mrksr): Ray and keras use custom init logic
+        attribute-defined-outside-init,
+        # NOTE(mrksr): Ray does not implement all abstract methods by design
+        abstract-method,
+        # NOTE(mrksr): We do not really care about module docstrings
+        missing-module-docstring,
+        # NOTE(mrksr): Our docs contain duplicate code.
+        # See https://github.com/PyCQA/pylint/issues/214
+        duplicate-code,
+        # NOTE(mrksr): Black compatibility
+        C0330,
+        C0326,
+
+
+[TYPECHECK]
+# NOTE(mrksr): Ignore tensorflow's lazy loading magic for import linting.
+ignored-modules=LazyLoader

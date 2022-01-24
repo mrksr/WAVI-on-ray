@@ -1,0 +1,53 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.2.3
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.18.0
+    hooks:
+    - id: commitizen
+      stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: poetry
+        name: poetry
+        entry: poetry check
+        language: system
+        pass_filenames: false
+        files: pyproject.toml
+
+      - id: isort
+        name: isort
+        entry: isort
+        language: system
+        require_serial: true
+        types: [python]
+
+      - id: black
+        name: black
+        entry: black
+        language: system
+        require_serial: true
+        types: [python]
+
+      - id: pydocstyle
+        name: pydocstyle
+        entry: pydocstyle
+        language: system
+        types: [python]
+
+      - id: mypy
+        name: mypy
+        entry: mypy
+        language: system
+        types: [python]
+
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        types: [python]
