@@ -34,8 +34,12 @@ disallow_subclassing_any = false
 implicit_reexport = true
 
 [[tool.mypy.overrides]]
-module = ['tensorflow', 'tensorflow_probability.*', 'keras_dgp.*']
+module = ["tensorflow", "tensorflow_probability.*", "keras_dgp.*"]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["ray"]
+follow_imports = "skip"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
