@@ -1,0 +1,24 @@
+cluster_name: mrksr-minimal
+
+provider:
+  type: aws
+  region: eu-west-2
+
+available_node_types:
+  ray.head.default:
+    node_config:
+      InstanceType: c6i.xlarge
+      ImageId: ami-0ea7b9a7c0526fe0d
+
+  ray.worker.default:
+    node_config:
+      InstanceType: c6i.xlarge
+      ImageId: ami-0ea7b9a7c0526fe0d
+
+setup_commands:
+  - >-
+    (stat $HOME/anaconda3/envs/pytorch_p38/ &> /dev/null &&
+    echo 'conda activate pytorch_p38' >> ~/.bashrc &&
+    conda activate pytorch_p38)
+    || true
+  - which ray || pip install ray[default]
