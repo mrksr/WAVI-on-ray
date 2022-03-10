@@ -1,4 +1,5 @@
 [core]
     remote = mlatcl
+    autostage = true
 ['remote "mlatcl"']
     url = s3://bas-wavi/dvcstore/
