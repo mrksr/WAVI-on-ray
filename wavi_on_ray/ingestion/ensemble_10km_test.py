@@ -24,8 +24,8 @@ def prepare(datasets_folder: Union[str, pathlib.Path]):
     outputs = pd.DataFrame({"SLC": dataset["SLC"][0]})
     inputs_outputs = pd.concat([inputs, outputs], axis=1)
 
-    prepared_folder = datasets / "prepared"
-    prepared_folder.mkdir(exist_ok=True)
+    prepared_folder = datasets / "prepared" / "ensemble_10km_test"
+    prepared_folder.mkdir(exist_ok=True, parents=True)
 
     for key, dataframe in {
         "inputs": inputs,
