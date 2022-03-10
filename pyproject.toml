@@ -10,7 +10,7 @@ ray = { version = "^1.9.2", extras = ["default", "tune"] }
 xarray = "^0.21.1"
 netCDF4 = "^1.5.8"
 GPy = "^1.10.0"
-dvc = "^2.9.5"
+dvc = { version = "^2.9.5", extras = ["s3"] }
 
 [tool.poetry.dev-dependencies]
 black = "21.7b0"
