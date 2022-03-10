@@ -6,7 +6,7 @@ import pandas as pd
 import xarray as xr
 
 
-def prepare(datasets_folder: Union[str, pathlib.Path]):
+def build_hdf_data(datasets_folder: Union[str, pathlib.Path]):
     """Extracts input and output data frames from the ensemble_10km_test.nc dataset.
 
     Args:
@@ -43,11 +43,6 @@ def prepare(datasets_folder: Union[str, pathlib.Path]):
     "datasets_folder",
     type=click.Path(exists=True, file_okay=False, writable=True),
 )
-def cli(datasets_folder):
+def ingest(datasets_folder):
     """Ingest ensemble_10km_test data for emulator training."""
-    prepare(datasets_folder)
-
-
-if __name__ == "__main__":
-    # pylint: disable=no-value-for-parameter
-    cli()
+    build_hdf_data(datasets_folder)
