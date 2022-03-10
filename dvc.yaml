@@ -1,8 +1,15 @@
 stages:
-  ensemble_10km_test:
+  ensemble_10km_test_ingest:
     cmd: wavi ensemble_10km_test ingest datasets
     deps:
     - datasets/ensemble_10km_test.nc
     - wavi_on_ray/ensemble_10km_test/ingestion.py
     outs:
-    - datasets/prepared/ensemble_10km_test
+    - datasets/prepared/ensemble_10km_test/full.hdf
+  ensemble_10km_test_build_datasets:
+    cmd: wavi ensemble_10km_test build-datasets datasets
+    deps:
+    - datasets/prepared/ensemble_10km_test/full.hdf
+    - wavi_on_ray/ensemble_10km_test/training_datasets.py
+    outs:
+    - datasets/prepared/ensemble_10km_test/training

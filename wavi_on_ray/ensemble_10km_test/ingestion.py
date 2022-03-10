@@ -33,7 +33,7 @@ def build_hdf_data(datasets_folder: Union[str, pathlib.Path]):
         "inputs_outputs": inputs_outputs,
     }.items():
         dataframe.to_hdf(
-            prepared_folder / "ensemble_10km_test.hdf",
+            prepared_folder / "full.hdf",
             key=key,
         )
 

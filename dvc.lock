@@ -14,3 +14,30 @@ stages:
       md5: e84b403c889386af07e0b0f259bc67f6.dir
       size: 18448
       nfiles: 1
+  ensemble_10km_test_ingest:
+    cmd: wavi ensemble_10km_test ingest datasets
+    deps:
+    - path: datasets/ensemble_10km_test.nc
+      md5: 3cea3e6f680cfaf8b9c7812abf68b713
+      size: 9430
+    - path: wavi_on_ray/ensemble_10km_test/ingestion.py
+      md5: 83a9a78ef852b28fc728228706ec36ea
+      size: 1350
+    outs:
+    - path: datasets/prepared/ensemble_10km_test/full.hdf
+      md5: 0b8dbf95247db0d4c5c19bcba4130ecf
+      size: 18448
+  ensemble_10km_test_build_datasets:
+    cmd: wavi ensemble_10km_test build-datasets datasets
+    deps:
+    - path: datasets/prepared/ensemble_10km_test/full.hdf
+      md5: 0b8dbf95247db0d4c5c19bcba4130ecf
+      size: 18448
+    - path: wavi_on_ray/ensemble_10km_test/training_datasets.py
+      md5: b0d00068fd752bc2aa60d6ee1b20ee0d
+      size: 2627
+    outs:
+    - path: datasets/prepared/ensemble_10km_test/training
+      md5: ce8a753cdd6486bf4427072662a2a278.dir
+      size: 95720
+      nfiles: 5
