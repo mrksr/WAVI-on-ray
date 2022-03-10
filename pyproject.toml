@@ -5,7 +5,7 @@ description = "A runtime environment for WAVI on ray clusters"
 authors = ["Markus Kaiser <mk2092@cam.ac.uk>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.8,<3.10"
 click = "^8.0.4"
 dvc = { version = "^2.9.5", extras = ["s3"] }
 GPy = "^1.10.0"
