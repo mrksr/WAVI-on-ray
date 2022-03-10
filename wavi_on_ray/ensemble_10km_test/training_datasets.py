@@ -69,7 +69,7 @@ def subsample_dataset(datasets_folder: Union[str, pathlib.Path]):
     for profile, inner_indexers in DATASET_PROFILES.items():
         output_dataset = ensemble_folder / "training" / f"{profile}.hdf"
 
-        full_indexer = np.logical_and(
+        full_indexer = np.logical_or(
             *(
                 subselect_indexer(task_indexer, inner_indexer)
                 for task_indexer, inner_indexer in zip(task_indexers, inner_indexers)
