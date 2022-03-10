@@ -1,0 +1,8 @@
+stages:
+  ensemble_10km_test:
+    cmd: python wavi_on_ray/ingestion/ensemble_10km_test.py datasets
+    deps:
+    - datasets/ensemble_10km_test.nc
+    - wavi_on_ray/ingestion/ensemble_10km_test.py
+    outs:
+    - datasets/prepared/ensemble_10km_test

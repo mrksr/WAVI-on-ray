@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  ensemble_10km_test:
+    cmd: python wavi_on_ray/ingestion/ensemble_10km_test.py datasets
+    deps:
+    - path: datasets/ensemble_10km_test.nc
+      md5: 3cea3e6f680cfaf8b9c7812abf68b713
+      size: 9430
+    - path: wavi_on_ray/ingestion/ensemble_10km_test.py
+      md5: a928bd03b0b8e4e1e4b01359cb4eae8d
+      size: 1431
+    outs:
+    - path: datasets/prepared/ensemble_10km_test
+      md5: 539028ce41d04be53bd059f942f362a8.dir
+      size: 18448
+      nfiles: 1
