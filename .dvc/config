@@ -1,0 +1,4 @@
+[core]
+    remote = mlatcl
+['remote "mlatcl"']
+    url = s3://bas-wavi/dvcstore/
