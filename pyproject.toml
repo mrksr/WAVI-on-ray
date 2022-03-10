@@ -30,13 +30,6 @@ jupyterlab-code-formatter = "^1.4.10"
 [tool.isort]
 profile = "black"
 
-[tool.commitizen]
-name = "cz_conventional_commits"
-version = "0.1.1"
-tag_format = "$major.$minor.$patch$prerelease"
-annotated_tag = true
-version_files = ["pyproject.toml:version", "wavi_on_ray/__init__.py:version"]
-
 [tool.mypy]
 strict = true
 disallow_subclassing_any = false
