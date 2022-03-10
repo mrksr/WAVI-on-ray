@@ -7,5 +7,6 @@ cli = click.Group(
     commands=[
         ingestion.ingest,
         training_datasets.build_datasets,
+        modelling.train_models,
     ],
 )

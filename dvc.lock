@@ -34,10 +34,10 @@ stages:
       md5: 0b8dbf95247db0d4c5c19bcba4130ecf
       size: 18448
     - path: wavi_on_ray/ensemble_10km_test/training_datasets.py
-      md5: b0d00068fd752bc2aa60d6ee1b20ee0d
-      size: 2627
+      md5: 72488f548c8b1cb6979b0fc199ef3c2e
+      size: 2626
     outs:
     - path: datasets/prepared/ensemble_10km_test/training
-      md5: ce8a753cdd6486bf4427072662a2a278.dir
-      size: 95720
+      md5: 95613232ba369ec0fa48d76af7d5bdde.dir
+      size: 92240
       nfiles: 5
