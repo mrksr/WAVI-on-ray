@@ -13,3 +13,18 @@ stages:
     - wavi_on_ray/ensemble_10km_test/training_datasets.py
     outs:
     - datasets/prepared/ensemble_10km_test/training
+
+  ensemble_10km_basin_specific:
+    cmd: wavi ensemble_10km_basin_specific ingest datasets
+    deps:
+    - datasets/ensemble_10km_basin_specific.nc
+    - wavi_on_ray/ensemble_10km_basin_specific/ingestion.py
+    outs:
+    - datasets/prepared/ensemble_10km_basin_specific/full.hdf
+  ensemble_10km_basin_specific_build_datasets:
+    cmd: wavi ensemble_10km_basin_specific build-datasets datasets
+    deps:
+    - datasets/prepared/ensemble_10km_basin_specific/full.hdf
+    - wavi_on_ray/ensemble_10km_basin_specific/training_datasets.py
+    outs:
+    - datasets/prepared/ensemble_10km_basin_specific/training
