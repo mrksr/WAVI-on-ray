@@ -41,3 +41,16 @@ stages:
       md5: 95613232ba369ec0fa48d76af7d5bdde.dir
       size: 92240
       nfiles: 5
+  ensemble_10km_basin_specific:
+    cmd: wavi ensemble_10km_basin_specific ingest datasets
+    deps:
+    - path: datasets/ensemble_10km_basin_specific.nc
+      md5: 7866985deb58dc44892e22c0eff46aaf
+      size: 16288
+    - path: wavi_on_ray/ensemble_10km_basin_specific/ingestion.py
+      md5: d146ca8699261e0168d73ddba2cb2bba
+      size: 1390
+    outs:
+    - path: datasets/prepared/ensemble_10km_basin_specific/full.hdf
+      md5: e0ce0335b350c656ee4d6bd9babd04e1
+      size: 31207
