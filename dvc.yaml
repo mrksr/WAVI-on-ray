@@ -28,3 +28,11 @@ stages:
     - wavi_on_ray/ensemble_10km_basin_specific/training_datasets.py
     outs:
     - datasets/prepared/ensemble_10km_basin_specific/training
+
+  ensemble_10km_5d_medium:
+    cmd: wavi ensemble_10km_5d_medium ingest datasets
+    deps:
+    - datasets/ensemble_10km_5D_medium.nc
+    - wavi_on_ray/ensemble_10km_5d_medium/ingestion.py
+    outs:
+    - datasets/prepared/ensemble_10km_5D_medium/full.hdf
