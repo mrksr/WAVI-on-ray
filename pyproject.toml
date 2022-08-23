@@ -10,7 +10,7 @@ click = "^8.0.4"
 dvc = { version = "^2.9.5", extras = ["s3"] }
 GPy = "^1.10.0"
 netCDF4 = "^1.5.8"
-ray = { version = "^1.9.2", extras = ["default", "tune"] }
+ray = { version = "^2.0.0", extras = ["default", "tune"] }
 s3fs = { version = "^2022.2.0", extras = ["boto3"] }
 xarray = "^2022.0.0"
 tables = "^3.7.0"
